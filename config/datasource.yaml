@@ -1,0 +1,5 @@
+datasource:
+  urls:
+    /index.html:
+      - config/A.yaml
+      - config/B.yaml

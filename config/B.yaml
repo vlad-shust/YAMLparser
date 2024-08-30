@@ -1,0 +1,10 @@
+actions:
+  - type: insert
+    position: "after"
+    target: "body"
+    element: "<footer>Footer Content</footer>"
+    priority: 3
+  - type: alter
+    oldValue: "Machine Learning"
+    newValue: "AI"
+    priority: 4

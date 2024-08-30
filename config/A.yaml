@@ -1,0 +1,8 @@
+actions:
+  - type: remove
+    selector: ".ad-banner"
+    priority: 1
+  - type: replace
+    selector: "#old-header"
+    newElement: "<header id='new-header'>New Header</header>"
+    priority: 2
