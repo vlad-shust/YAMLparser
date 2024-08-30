@@ -20,7 +20,7 @@ const loadYAMLFile = async (filePath) => {
 
 const applyConfiguration = (config) => {
     if (!config?.actions?.length) {
-        console.warn("Invalid or empty configuration");
+        console.warn('Invalid or empty configuration');
 
         return;
     }
@@ -83,7 +83,7 @@ const handleInsertAction = (action) => {
 
 const handleAlterAction = (action) => {
     if (!action.oldValue || !action.newValue) {
-        throw new Error("Alter action requires both oldValue and newValue");
+        throw new Error('Alter action requires both oldValue and newValue');
     }
 
     document.body.innerHTML = document.body.innerHTML.replace(new RegExp(action.oldValue, 'g'), action.newValue);
@@ -117,4 +117,4 @@ const init = async () => {
     applyConfiguration(config);
 };
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener('DOMContentLoaded', init);
