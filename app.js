@@ -63,21 +63,21 @@ const handleReplaceAction = (action) => {
     });
 };
 
-const handleInsertAction = (action) => {
-    const targetElement = document.querySelector(action.target);
+const handleInsertAction = ({ target, element, position }) => {
+    const targetElement = document.querySelector(target);
 
     if (!targetElement) {
-        throw new Error(`Target element not found: ${action.target}`);
+        throw new Error(`Target element not found: ${target}`);
     }
 
-    const newElementToInsert = document.createRange().createContextualFragment(action.element);
+    const newElementToInsert = document.createRange().createContextualFragment(element);
 
-    if (action.position === 'after') {
+    if (position === 'after') {
         targetElement.parentNode.insertBefore(newElementToInsert, targetElement.nextSibling);
-    } else if (action.position === 'before') {
+    } else if (position === 'before') {
         targetElement.parentNode.insertBefore(newElementToInsert, targetElement);
     } else {
-        throw new Error(`Unsupported position: ${action.position}`);
+        throw new Error(`Unsupported position: ${position}`);
     }
 };
 
